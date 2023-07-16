@@ -1,0 +1,32 @@
+---
+- hosts: localhost
+  gather_facts: False
+  vars:
+    region: us-west-2
+    db_instance_identifier: aurora-cluster-demo
+    snapshot_identifier: my-cluster-final-snapshot
+    restored_db_instance_identifier: restored-instance
+    db_engine: aurora-postgresql
+    db_instance_class: db.r5.large
+    db_username: your_username
+    db_password: your_password
+
+  tasks:
+  - name: Ensure the RDS instance is restored from the latest snapshot
+    community.aws.rds_snapshot:
+      region: "{{ region }}"
+      db_instance_identifier: "{{ db_instance_identifier }}"
+      db_snapshot_identifier: "{{ snapshot_identifier }}"
+      state: present
+    register: snapshot_details
+
+  - name: Restore the DB instance from snapshot
+    community.aws.rds_instance:
+      region: "{{ region }}"
+      db_instance_identifier: "{{ restored_db_instance_identifier }}"
+      db_snapshot_identifier: "{{ snapshot_identifier }}"
+      engine: "{{ db_engine }}"
+      instance_type: "{{ db_instance_class }}"
+      username: "{{ db_username }}"
+      password: "{{ db_password }}"
+      wait: yes
