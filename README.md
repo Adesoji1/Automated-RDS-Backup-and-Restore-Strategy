@@ -20,7 +20,7 @@ The Terraform scripts were structured into logical sections, including provider 
 ### Restore Strategies
 
 1. Manually restoring a Db from a Snapshot inside an aws console
-2. Using Ansible. Ansible: This is a powerful automation tool that can manage AWS resources (among many others) using its easy-to-read YAML syntax. <a name="here"></a> [click here](./Restore_strategy/ansible_instructions.md) 
+2. Using Ansible. Ansible: This is a powerful automation tool that can manage AWS resources (among many others) using its easy-to-read YAML syntax. <a name="here"></a> [click here](./Restore_strategy/ansible_instructions.md) but we are focusing only on terraform .
 3. Running a bash script <a name="here"></a> [here](./Restore_strategy/execute_s3_script.sh) with the  instructions <a name="here"></a> [here](./Restore_strategy/instruction_for_restore_snapshot_py.md)
 4. Create an RDS instance for the staging environment by restoring the latest snapshot of the production environment <a name="here"></a> [click here](./staging_environment/Readme.md) for implementation instructions
 
