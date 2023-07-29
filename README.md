@@ -32,7 +32,7 @@ To execute the Terraform scripts, the following prerequisites should be in place
 
 1. Terraform should be installed on the local machine.
 2. AWS credentials with appropriate permissions should be configured.
-3. ccess to the AWS region specified in the Terraform scripts should be available.
+3.Access to the AWS region specified in the Terraform scripts should be available.
 
 #### Cleanup Steps
 
@@ -113,6 +113,8 @@ export AWS_SESSION_TOKEN="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
 
 in your CLI, cick on the copy icon under the : Set AWS environment variables (Short-term credentials) and paste in your terraform task path or directory cli environment. the command is seen above
+
+you can configure your aws credentials by running "aws configure"
 
 Having done the above, run this command ⬇️ to verify you are logged into your aws and you can view your default IAM Role.
 
